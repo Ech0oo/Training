@@ -3,7 +3,11 @@
 
     angular
         .module('app')
-        .controller('sum', summation);
+        .controller('SummCtrl', summation);
 
-    function summation() { }
+    function summation($scope) {
+        $scope.summNumbers = function () {
+            $scope.result = +$scope.firstNumber + +$scope.secondNumber;
+        }
+    }
 })();
