@@ -1,0 +1,1 @@
+2 controllers and 2 way binding
