@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Angular</title>
+    
+    <!-- inject-vendor:css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/src/content/styles.css" rel="stylesheet" />
 </head>
 <body>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputNumberOne" class="col-sm-2 control-label">First number:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputNumberOne" placeholder="Enter the first number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputNumberTwo" class="col-sm-2 control-label">Second number:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputNumberTwo" placeholder="Enter the second number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSumm" class="col-sm-2 control-label">Summ:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputSumm" placeholder="The result">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6">
+                <button type="submit" class="btn btn-default">Summ</button>
+            </div>
+        </div>
+    </form>
     
+    
+    <!-- inject-vendor:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
 </body>
 </html>
