@@ -1,1 +1,1 @@
-2 controllers and 2 way binding
+3 inputs, 2 way binding

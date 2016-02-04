@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -7,7 +7,18 @@
 
     function summation($scope) {
         $scope.summNumbers = function () {
-            $scope.result = +$scope.firstNumber + +$scope.secondNumber;
+            var firstNum = +$scope.firstNumber,
+                secondNum = +$scope.secondNumber;
+            
+            // check type for number
+            if (!_.isNumber(firstNum) || isNaN(firstNum)) {
+                $scope.result = "First value is not a number";
+            } else if (!_.isNumber(secondNum) || isNaN(secondNum)) {
+                $scope.result = "Second value is not a number";
+            } else {
+                $scope.result = firstNum + secondNum;
+            }
+               
         }
     }
 })();
