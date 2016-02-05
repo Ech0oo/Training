@@ -3,22 +3,25 @@
 
     angular
         .module('app')
-        .controller('SummCtrl', summation);
+        .controller('SummCtrl', SummCtrl);
 
-    function summation($scope) {
-        $scope.summNumbers = function () {
-            var firstNum = +$scope.firstNumber,
-                secondNum = +$scope.secondNumber;
+    function SummCtrl() {
+        var vm = this;
+        
+        vm.summNumbers = function () {
+            var firstNum = +vm.firstNumber,
+                secondNum = +vm.secondNumber;
             
             // check type for number
-            if (!_.isNumber(firstNum) || isNaN(firstNum)) {
-                $scope.result = "First value is not a number";
-            } else if (!_.isNumber(secondNum) || isNaN(secondNum)) {
-                $scope.result = "Second value is not a number";
+            if (!_.isNumber(firstNum) || _.isNaN(firstNum) || _.isUndefined(vm.firstNumber)) {
+                vm.result = "First value is not a number";
+            } else if (!_.isNumber(secondNum) || _.isNaN(secondNum) || _.isUndefined(vm.firstNumber)) {
+                vm.result = "Second value is not a number";
             } else {
-                $scope.result = firstNum + secondNum;
+                vm.result = firstNum + secondNum;
             }
                
-        }
+        };
+        
     }
 })();

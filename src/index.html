@@ -7,26 +7,27 @@
     <!-- inject-vendor:css -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+   <!-- inject:css -->
     <link href="/src/content/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <form class="form-horizontal" ng-controller="SummCtrl" ng-submit="summNumbers()">
+    <form class="form-horizontal" ng-controller="SummCtrl as summCtrl" ng-submit="summCtrl.summNumbers()">
         <div class="form-group">
             <label for="inputNumberOne" class="col-sm-2 control-label">First number:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNumberOne" placeholder="Enter the first number" ng-model="firstNumber">
+                <input type="text" class="form-control" id="inputNumberOne" placeholder="Enter the first number" ng-model="summCtrl.firstNumber">
             </div>
         </div>
         <div class="form-group">
             <label for="inputNumberTwo" class="col-sm-2 control-label">Second number:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNumberTwo" placeholder="Enter the second number" ng-model="secondNumber">
+                <input type="text" class="form-control" id="inputNumberTwo" placeholder="Enter the second number" ng-model="summCtrl.secondNumber">
             </div>
         </div>
         <div class="form-group">
             <label for="inputSumm" class="col-sm-2 control-label">Summ:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputSumm" placeholder="The result" ng-model="result" />
+                <input type="text" class="form-control" id="inputSumm" placeholder="The result" ng-model="summCtrl.result" />
             </div>
         </div>
         <div class="form-group">
