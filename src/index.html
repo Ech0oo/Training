@@ -1,61 +1,43 @@
 <!DOCTYPE html>
 <html ng-app="app" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Angular</title>
-    
-    <!-- inject-vendor:css -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<title>Angular</title>
+
+	<!-- inject-vendor:css -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
    <!-- inject:css -->
-    <link href="/src/content/styles.css" rel="stylesheet" />
+	<link href="/src/content/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <form class="form-horizontal" ng-controller="SummCtrl as summCtrl" ng-submit="summCtrl.summNumbers()">
-        <div class="form-group">
-            <label for="inputNumberOne" class="col-sm-2 control-label">First number:</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNumberOne" placeholder="Enter the first number" ng-model="summCtrl.firstNumber">
-                {{summCtrl.firstNumber}}
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputNumberTwo" class="col-sm-2 control-label">Second number:</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputNumberTwo" placeholder="Enter the second number" ng-model="summCtrl.secondNumber">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputSumm" class="col-sm-2 control-label">Summ:</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputSumm" placeholder="The result" ng-model="summCtrl.result" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-6">
-                <button type="submit" class="btn btn-default" >Summ</button>
-            </div>
-        </div>
-        <lesson-sum></lesson-sum>
-        <div class="form-group">
-            <label for="inputLopata" class="col-sm-2 control-label">Summ:</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="inputLopata" placeholder="The result" ng-model="lopata" />
-                {{summCtrl.firstNumber}}
-            </div>
-        </div>
-    </form>
-    
-    
-    <!-- inject-vendor:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    
-    <!-- inject:js -->
-    <script src="app/app.module.js"></script>
-    <script src="app/sum.controller.js"></script>
-    <script src="app/sum.directive.js"></script>
+	<form class="form-horizontal" ng-controller="SummCtrl as summCtrl">
+		<div class="form-group">
+			<label for="inputNumberOne" class="col-sm-2 control-label">First number:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="inputNumberOne" placeholder="Enter the first number" ng-model="summCtrl.firstNumber" ng-change="changeResult()">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputNumberTwo" class="col-sm-2 control-label">Second number:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="inputNumberTwo" placeholder="Enter the second number" ng-model="summCtrl.secondNumber" ng-change="changeResult()">
+			</div>
+		</div>
+
+		<lesson-sum></lesson-sum>
+	</form>
+
+
+	<!-- inject-vendor:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+
+	<!-- inject:js -->
+	<script src="app/app.module.js"></script>
+	<script src="app/sum.controller.js"></script>
+	<script src="app/sum.directive.js"></script>
 </body>
 </html>

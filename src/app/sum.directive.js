@@ -1,5 +1,5 @@
 (function () {
-    'use strict';
+	'use strict';
 
 /**
 * @desc directive sum add input element that summarize 2 numbers
@@ -20,14 +20,34 @@
 		return directive;
 
 		function link(scope, element, attrs, vm) {
-			console.log("From controller: " + vm.directiveTestVariable);
-			console.log("From vm: " + scope.summCtrl.firstNumber);
-			scope.vm.inputsExpression = vm.firstNumber;
 
-			/* check type for number */
-			
+			scope.changeResult = summarize;
 
-			/* return true if input value is a number else return false */
+
+			function summarize() {
+				var firstN = parseFloat(scope.summCtrl.firstNumber),
+					secondN = parseFloat(scope.summCtrl.secondNumber),
+					a = "Enter the first number",
+					b = "Enter the second number",
+					c = "The sum";
+
+				if (checkInputNumber(firstN)) {
+					a = firstN;
+				}
+
+				if (checkInputNumber(secondN)) {
+					b = secondN;
+				}
+
+				if (checkInputNumber(a + b)) {
+					c = a + b;
+				}
+
+				vm.result = a + " + " + b + " = " + c;
+			}
+
+
+			/* return true if input value is not a number else return false */
 			function checkInputNumber(value) {
 				if (_.isNumber(value) && !_.isNaN(value)) {
 					return true;
@@ -35,7 +55,13 @@
 
 				return false;
 			}
+
+//			console.log("From controller: " + vm.directiveTestVariable);
+//			console.log("From vm: " + scope.summCtrl.firstNumber);
+
+
+
 		}
 	}
-	
+
 }());
