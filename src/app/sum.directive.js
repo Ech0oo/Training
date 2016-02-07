@@ -15,14 +15,15 @@
 			templateUrl: 'content/sum.directive.html',
 			restrict: 'E',
 			controller: "SummCtrl",
-			controllerAs: "vm"
+			controllerAs: "summCtrl"
 		};
 		return directive;
 
-		function link(scope, element, attrs, vm) {
+		function link(scope, element, attrs, summCtrl) {
+
+			element.on('load', summarize());
 
 			scope.changeResult = summarize;
-
 
 			function summarize() {
 				var firstN = parseFloat(scope.summCtrl.firstNumber),
@@ -43,7 +44,7 @@
 					c = a + b;
 				}
 
-				vm.result = a + " + " + b + " = " + c;
+				summCtrl.result = a + " + " + b + " = " + c;
 			}
 
 

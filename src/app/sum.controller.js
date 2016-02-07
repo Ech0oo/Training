@@ -5,15 +5,16 @@
 		.module('app')
 		.controller('SummCtrl', SummCtrl);
 
-	function SummCtrl() {
+	function SummCtrl($scope , $stateParams) {
 		/* vm - ViewModel */
 		var vm = this;
 
-//		vm.firstNumber = "Enter the first number";
-//		vm.secondNumber = "Enter the second Number";
+		vm.title = "My title from controller";
+		vm.n1 = $stateParams.n1; // temp
+		vm.n2 = $stateParams.n2; //temp
 
-		/* test variable for geting from controller to directive */
-		vm.directiveTestVariable = "testVariable";
+		vm.firstNumber = $stateParams.n1;
+		vm.secondNumber = $stateParams.n2;
 
 	}
 })();
