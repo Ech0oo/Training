@@ -59,6 +59,15 @@
 				return number;
 			}
 
+			/* convert function, if number return convert value or false */
+//			function zero(number) {
+//				if (number) {
+//					return fx.convert(number, {from: "EUR", to: "CAD"});
+//				}
+//
+//				return number;
+//			}
+
 		}
 	}
 
