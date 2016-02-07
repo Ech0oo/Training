@@ -26,41 +26,38 @@
 			scope.changeResult = summarize;
 
 			function summarize() {
-				var firstN = parseFloat(scope.summCtrl.firstNumber),
-					secondN = parseFloat(scope.summCtrl.secondNumber),
-					a = "Enter the first number",
-					b = "Enter the second number",
-					c = "The sum";
+				var firstN = scope.summCtrl.firstNumber,
+					secondN = scope.summCtrl.secondNumber,
+					a,
+					b,
+					c;
 
-				if (checkInputNumber(firstN)) {
-					a = firstN;
-				}
-
-				if (checkInputNumber(secondN)) {
-					b = secondN;
-				}
-
-				if (checkInputNumber(a + b)) {
-					c = a + b;
-				}
+				a = getNumber(firstN) || "Enter the first number";
+				b = getNumber(secondN) || "Enter the second number";
+				c = getNumber(a+b) || "The sum";
 
 				summCtrl.result = a + " + " + b + " = " + c;
 			}
 
 
-			/* return true if input value is not a number else return false */
-			function checkInputNumber(value) {
-				if (_.isNumber(value) && !_.isNaN(value)) {
-					return true;
-				}
-
-				return false;
+			/* Used "_.compose". return Namber or false */
+			function getNumber(valueFromInput) {
+				 return _.compose(one, two)(valueFromInput);
 			}
 
-//			console.log("From controller: " + vm.directiveTestVariable);
-//			console.log("From vm: " + scope.summCtrl.firstNumber);
+			/* return NaN for " true/false/null/'' " or Number/NaN */
+			function two(FromInput) {
+				return parseFloat(FromInput);
+			}
 
+			/* return false if NaN or Number */
+			function one(number) {
+				if (_.isNaN(number)) {
+					return false;
+				}
 
+				return number;
+			}
 
 		}
 	}
