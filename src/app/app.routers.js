@@ -7,7 +7,7 @@
 
 	function routeConfig($urlRouterProvider, $stateProvider) {
 
-		$urlRouterProvider.otherwise('/n1');
+		$urlRouterProvider.otherwise('/');
 
 		/*
 			n1 - the first number
