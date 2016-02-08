@@ -37,6 +37,7 @@
 				c = getNumber(a+b) || "The sum";
 
 				summCtrl.result = a + " + " + b + " = " + c;
+				summCtrl.convertRate = toNewCurrency(c, "CAD") + " CAD";
 			}
 
 
@@ -59,14 +60,14 @@
 				return number;
 			}
 
-			/* convert function, if number return convert value or false */
-//			function zero(number) {
-//				if (number) {
-//					return fx.convert(number, {from: "EUR", to: "CAD"});
-//				}
-//
-//				return number;
-//			}
+			/* convert function, if number return convert value or number */
+			function toNewCurrency(number, symbol) {
+				if (!_.isString(number)) {
+					return fx.convert(number, {from: "EUR", to: symbol});
+				}
+
+				return number;
+			}
 
 		}
 	}
