@@ -9,7 +9,7 @@
 		.module('app')
 		.directive('lessonSum', sum);
 
-	function sum() {
+	function sum(fixerService) {
 		var directive = {
 			link: link,
 			templateUrl: 'content/sum.directive.html',
@@ -37,7 +37,7 @@
 				c = getNumber(a+b) || "The sum";
 
 				summCtrl.result = a + " + " + b + " = " + c;
-				summCtrl.convertRate = toNewCurrency(c, "CAD") + " CAD";
+				summCtrl.convertRate = toNewCurrency(c, "CAD");
 			}
 
 
