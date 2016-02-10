@@ -4,3 +4,19 @@ body {
 .light-grey{
 	color: lightgrey;
 }
+.currency-select{
+	padding: 3px;
+	border-radius: 3px;
+	background-color: aliceblue;
+}
+.currency-result{
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	background-color: rgba(226, 224, 224, 0.7);
+	color: gray;
+}
+.pad-text{
+	display: block;
+	
+	padding: 6px;
+}
