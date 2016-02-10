@@ -17,6 +17,7 @@ body {
 }
 .pad-text{
 	display: block;
-	
+	height: 34px;
+
 	padding: 6px;
 }

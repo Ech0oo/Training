@@ -1,14 +1,14 @@
 (function () {
 	'use strict';
-	
+
 	angular
 		.module("currencyService", [])
 		.service("fixerService", fixer);
-	
+
 	function fixer() {
 		$.getJSON("content/rates.json", getRates)
-//		$.getJSON("http://api.fixer.io/latest?symbols=USD,GBP", demo)
-		
+//		$.getJSON("http://api.fixer.io/latest", getRates)
+
 		function getRates(data) {
 			// Check money.js has finished loading:
 			if ( typeof fx !== "undefined" && fx.rates ) {
@@ -24,6 +24,6 @@
 				}
 			}
 		}// End getRates;
-		
+
 	};
 }());

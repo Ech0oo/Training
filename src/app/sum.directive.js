@@ -14,16 +14,19 @@
 			link: link,
 			templateUrl: 'content/sum.directive.html',
 			restrict: 'E',
-			controller: "SummCtrl",
-			controllerAs: "summCtrl"
+			controller: 'SummCtrl',
+			controllerAs: 'summCtrl'
 		};
 		return directive;
 
 		function link(scope, element, attrs, summCtrl) {
+			var resultSummarizeNumber;
 
 			element.on('load', summarize());
 
 			scope.changeResult = summarize;
+
+			scope.changeCurrency = convert;
 
 			function summarize() {
 				var firstN = scope.summCtrl.firstNumber,
@@ -32,12 +35,13 @@
 					b,
 					c;
 
-				a = getNumber(firstN) || "Enter the first number";
-				b = getNumber(secondN) || "Enter the second number";
-				c = getNumber(a+b) || "The sum";
+				a = getNumber(firstN) || 'Enter the first number';
+				b = getNumber(secondN) || 'Enter the second number';
+				c = getNumber(a+b) || 'The sum';
+				resultSummarizeNumber = c;
 
 				summCtrl.result = a + " + " + b + " = " + c;
-				summCtrl.convertRate = toNewCurrency(c, "CAD");
+				summCtrl.convertRate = toNewCurrency(c, summCtrl.selectedState);
 			}
 
 
@@ -63,10 +67,15 @@
 			/* convert function, if number return convert value or number */
 			function toNewCurrency(number, symbol) {
 				if (!_.isString(number)) {
-					return fx.convert(number, {from: "EUR", to: symbol});
+					return fx.convert(number, {from: 'EUR', to: symbol});
 				}
 
 				return number;
+			}
+
+			/* calculate new currency */
+			function convert() {
+				summCtrl.convertRate = toNewCurrency(resultSummarizeNumber, summCtrl.selectedState);
 			}
 
 		}
