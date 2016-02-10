@@ -7,8 +7,8 @@
 	<!-- inject-vendor:css -->
 	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-   <!-- inject:css -->
-	<link href="/src/content/styles.css" rel="stylesheet" />
+	 <!-- inject:css -->
+	<link href="app/layout/styles.css" rel="stylesheet" />
 </head>
 <body>
 	<!-- FORM OF IMPUTS -->
@@ -24,13 +24,13 @@
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/underscore/underscore.js"></script>
-	<script src="content/money.min.js"></script>
+	<script src="app/services/fixer.money.min.js"></script>
 
 	<!-- inject:js -->
-	<script src="app/fixer.service.js"></script>
+	<script src="app/services/fixer.service.js"></script>
 	<script src="app/app.module.js"></script>
-	<script src="app/sum.controller.js"></script>
-	<script src="app/sum.directive.js"></script>
+	<script src="app/layout/sum.controller.js"></script>
+	<script src="app/components/sum.directive.js"></script>
 	<script src="app/app.routers.js"></script>
 </body>
 </html>

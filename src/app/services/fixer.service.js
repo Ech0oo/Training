@@ -6,7 +6,7 @@
 		.service("fixerService", fixer);
 
 	function fixer() {
-		$.getJSON("content/rates.json", getRates)
+		$.getJSON("app/services/rates.json", getRates)
 //		$.getJSON("http://api.fixer.io/latest", getRates)
 
 		function getRates(data) {

@@ -1,1 +1,1 @@
-Traning tasks.
+Training tasks.

@@ -12,7 +12,7 @@
 	function sum(fixerService) {
 		var directive = {
 			link: link,
-			templateUrl: 'content/sum.directive.html',
+			templateUrl: 'app/components/sum.directive.html',
 			restrict: 'E',
 			controller: 'SummCtrl',
 			controllerAs: 'summCtrl'

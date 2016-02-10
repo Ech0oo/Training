@@ -16,14 +16,14 @@
 		$stateProvider
 			.state('n1', {
 				url: '/:n1',
-				templateUrl: 'content/form.html',
+				templateUrl: 'app/layout/sum.html',
 				controller: 'SummCtrl',
 				controllerAs: 'summCtrl'
 			})
 
 			.state('n2', {
 				url: '/:n1/:n2',
-				templateUrl: 'content/form.html',
+				templateUrl: 'app/layout/sum.html',
 				controller: 'SummCtrl',
 				controllerAs: 'summCtrl'
 			});

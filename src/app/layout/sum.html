@@ -22,9 +22,11 @@
 			</div>
 		</div>
 
+		<!-- THE SUMMARIZE DIRECTIVE -->
 		<lesson-sum></lesson-sum>
 
-		<div class="form-group">
+		<!-- THE CURRENCY CONVERTION -->
+		<div class="form-group" ng-show="summCtrl.firstNumber || summCtrl.secondNumber">
 			<div class="col-sm-2 control-label">
 				<select class="currency-selecte" ng-options="type as type for (type,value) in summCtrl.currencyList" ng-model="summCtrl.selectedState" ng-change="changeCurrency()"></select>
 			</div>
