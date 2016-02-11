@@ -69,7 +69,7 @@
 
 			/* return NaN for " true/false/null/'' " or Number/NaN */
 			function two(FromInput) {
-				return parseFloat(FromInput);
+				return parseFloat(FromInput, 10);
 			}
 
 			/* return false if NaN otherwise the number */
