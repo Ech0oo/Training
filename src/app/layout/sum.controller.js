@@ -13,6 +13,7 @@
 		vm.firstNumber = $stateParams.n1;
 		vm.secondNumber = $stateParams.n2;
 
+		/* get rates from the fixer service */
 		vm.currencyList = fx.rates;
 		vm.selectedState = "CAD";
 	}

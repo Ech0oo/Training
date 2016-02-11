@@ -35,9 +35,25 @@
 					b,
 					c;
 
-				a = getNumber(firstN) || 'Enter the first number';
-				b = getNumber(secondN) || 'Enter the second number';
-				c = getNumber(a+b) || 'The sum';
+				
+				a = getNumber(firstN);
+				b = getNumber(secondN);
+				
+				if ( !_.isBoolean(a) && !_.isBoolean(b)) {
+					c = a + b;
+				} else {
+					c = 'The sum';
+				}
+				
+				if(!a && a !== 0) {
+					a = 'Enter the first number';
+				}
+				
+				if(!b && b !== 0) {
+					b = 'Enter the second number';
+				}
+				
+				
 				resultSummarizeNumber = c;
 
 				summCtrl.result = a + " + " + b + " = " + c;
@@ -49,13 +65,14 @@
 			function getNumber(valueFromInput) {
 				 return _.compose(one, two)(valueFromInput);
 			}
+			
 
 			/* return NaN for " true/false/null/'' " or Number/NaN */
 			function two(FromInput) {
-				return parseFloat(FromInput);
+				return parseFloat(FromInput, 10);
 			}
 
-			/* return false if NaN or Number */
+			/* return false if NaN otherwise the number */
 			function one(number) {
 				if (_.isNaN(number)) {
 					return false;
